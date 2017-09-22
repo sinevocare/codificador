@@ -29,6 +29,8 @@ class TecladoTestCase(unittest.TestCase):
     def testa_entrada_valida_com_letras_de_mesmo_numero(self):
         self.assertEqual('7_777', Teclado.codificar('PR'))
 
+    def testa_entrada_valida_com_letras_em_minusculo(self):
+        self.assertEqual('3302444', Teclado.codificar('e ai'))
 
 if __name__ == '__main__':
     unittest.main()

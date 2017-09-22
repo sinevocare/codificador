@@ -8,6 +8,10 @@ class TecladoTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Teclado.codificar(42)
 
+    def testa_se_entrada_possui_caracteres_validos(self):
+        with self.assertRaises(ValueError):
+            Teclado.codificar('E aí, bebê')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -43,4 +43,10 @@ class Teclado(object):
         if len(mensagem) > 255:
             raise ValueError('A mensagem deve possuir até 255 caracteres.')
 
-        return ''.join(cls.dicionario[letra] for letra in mensagem)
+        codificacoes = list(map(cls.dicionario.get, mensagem))
+
+        return ''.join(
+            codigo + ('_' if (proxima or '').startswith(codigo[0]) else '')
+            for codigo, proxima
+            in zip(codificacoes, codificacoes[1:] + [None])
+        )

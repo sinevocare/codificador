@@ -26,6 +26,9 @@ class TecladoTestCase(unittest.TestCase):
     def testa_entrada_valida_com_uma_letra(self):
         self.assertEqual('7777', Teclado.codificar('S'))
 
+    def testa_entrada_valida_com_letras_de_mesmo_numero(self):
+        self.assertEqual('7_777', Teclado.codificar('PR'))
+
 
 if __name__ == '__main__':
     unittest.main()
